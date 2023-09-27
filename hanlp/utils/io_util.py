@@ -441,7 +441,7 @@ def read_tsv_as_sents(tsv_file_path, ignore_prefix=None, delimiter=None):
 
 def generate_words_tags_from_tsv(tsv_file_path, lower=False, gold=True, max_seq_length=None, sent_delimiter=None,
                                  char_level=False, hard_constraint=False):
-    for sent in read_tsv_as_sents(tsv_file_path):
+    for sent in read_tsv_as_sents(tsv_file_path, delimiter='\t'):
         words = [cells[0] for cells in sent]
         if max_seq_length:
             offset = 0
